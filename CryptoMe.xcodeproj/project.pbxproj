@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		E5509183269334E000BCE452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509182269334E000BCE452 /* AppDelegate.swift */; };
 		E5509185269334E000BCE452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509184269334E000BCE452 /* SceneDelegate.swift */; };
-		E5509187269334E000BCE452 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509186269334E000BCE452 /* ViewController.swift */; };
-		E550918A269334E000BCE452 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5509188269334E000BCE452 /* Main.storyboard */; };
+		E5509187269334E000BCE452 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509186269334E000BCE452 /* MainController.swift */; };
 		E550918C269334E100BCE452 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E550918B269334E100BCE452 /* Assets.xcassets */; };
 		E550918F269334E100BCE452 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E550918D269334E100BCE452 /* LaunchScreen.storyboard */; };
 		E550919A269334E100BCE452 /* CryptoMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509199269334E100BCE452 /* CryptoMeTests.swift */; };
@@ -38,8 +37,7 @@
 		E550917F269334E000BCE452 /* CryptoMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5509182269334E000BCE452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5509184269334E000BCE452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5509186269334E000BCE452 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E5509189269334E000BCE452 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E5509186269334E000BCE452 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		E550918B269334E100BCE452 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E550918E269334E100BCE452 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5509190269334E100BCE452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,13 +97,8 @@
 		E5509181269334E000BCE452 /* CryptoMe */ = {
 			isa = PBXGroup;
 			children = (
-				E5509182269334E000BCE452 /* AppDelegate.swift */,
-				E5509184269334E000BCE452 /* SceneDelegate.swift */,
-				E5509186269334E000BCE452 /* ViewController.swift */,
-				E5509188269334E000BCE452 /* Main.storyboard */,
-				E550918B269334E100BCE452 /* Assets.xcassets */,
-				E550918D269334E100BCE452 /* LaunchScreen.storyboard */,
-				E5509190269334E100BCE452 /* Info.plist */,
+				E5DDC3FB269338C000ED73D0 /* Scenes */,
+				E55091B8269335EB00BCE452 /* app */,
 			);
 			path = CryptoMe;
 			sourceTree = "<group>";
@@ -126,6 +119,34 @@
 				E55091A6269334E100BCE452 /* Info.plist */,
 			);
 			path = CryptoMeUITests;
+			sourceTree = "<group>";
+		};
+		E55091B8269335EB00BCE452 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				E5509190269334E100BCE452 /* Info.plist */,
+				E550918D269334E100BCE452 /* LaunchScreen.storyboard */,
+				E550918B269334E100BCE452 /* Assets.xcassets */,
+				E5509184269334E000BCE452 /* SceneDelegate.swift */,
+				E5509182269334E000BCE452 /* AppDelegate.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		E5DDC3FB269338C000ED73D0 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E5DDC3FC269338C800ED73D0 /* Main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E5DDC3FC269338C800ED73D0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E5509186269334E000BCE452 /* MainController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +254,6 @@
 			files = (
 				E550918F269334E100BCE452 /* LaunchScreen.storyboard in Resources */,
 				E550918C269334E100BCE452 /* Assets.xcassets in Resources */,
-				E550918A269334E000BCE452 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5509187269334E000BCE452 /* ViewController.swift in Sources */,
+				E5509187269334E000BCE452 /* MainController.swift in Sources */,
 				E5509183269334E000BCE452 /* AppDelegate.swift in Sources */,
 				E5509185269334E000BCE452 /* SceneDelegate.swift in Sources */,
 			);
@@ -296,14 +316,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E5509188269334E000BCE452 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E5509189269334E000BCE452 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E550918D269334E100BCE452 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,7 +450,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R42K23F9JJ;
-				INFOPLIST_FILE = CryptoMe/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CryptoMe/app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +470,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R42K23F9JJ;
-				INFOPLIST_FILE = CryptoMe/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CryptoMe/app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
