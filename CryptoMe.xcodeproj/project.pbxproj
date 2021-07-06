@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E52C92A8269449AE0076325A /* CoinListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92A7269449AE0076325A /* CoinListResponse.swift */; };
+		E52C92AD26944C6B0076325A /* CoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92AC26944C6B0076325A /* CoinResponse.swift */; };
 		E5509183269334E000BCE452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509182269334E000BCE452 /* AppDelegate.swift */; };
 		E5509185269334E000BCE452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509184269334E000BCE452 /* SceneDelegate.swift */; };
 		E5509187269334E000BCE452 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509186269334E000BCE452 /* MainController.swift */; };
@@ -14,6 +16,15 @@
 		E550918F269334E100BCE452 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E550918D269334E100BCE452 /* LaunchScreen.storyboard */; };
 		E550919A269334E100BCE452 /* CryptoMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509199269334E100BCE452 /* CryptoMeTests.swift */; };
 		E55091A5269334E100BCE452 /* CryptoMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55091A4269334E100BCE452 /* CryptoMeUITests.swift */; };
+		E5D1EEA926933B2200B2D816 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E5D1EEA826933B2200B2D816 /* Moya */; };
+		E5D1EEAB26933B2200B2D816 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E5D1EEAA26933B2200B2D816 /* ReactiveMoya */; };
+		E5D1EEAD26933B2200B2D816 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E5D1EEAC26933B2200B2D816 /* RxMoya */; };
+		E5D1EEB3269341C700B2D816 /* Reqres in Frameworks */ = {isa = PBXBuildFile; productRef = E5D1EEB2269341C700B2D816 /* Reqres */; };
+		E5D1EEB92693443F00B2D816 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5D1EEB82693443F00B2D816 /* SnapKit */; };
+		E5D1EEBF2693AB3A00B2D816 /* PriceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1EEBE2693AB3A00B2D816 /* PriceEndpoint.swift */; };
+		E5D1EEC726941F8700B2D816 /* ReqresSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1EEC626941F8700B2D816 /* ReqresSession.swift */; };
+		E5D1EECD2694237B00B2D816 /* BlockchainDataEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1EECC2694237B00B2D816 /* BlockchainDataEndpoint.swift */; };
+		E5D1EED22694239E00B2D816 /* TargetType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1EED12694239E00B2D816 /* TargetType+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E52C92A7269449AE0076325A /* CoinListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListResponse.swift; sourceTree = "<group>"; };
+		E52C92AC26944C6B0076325A /* CoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResponse.swift; sourceTree = "<group>"; };
 		E550917F269334E000BCE452 /* CryptoMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5509182269334E000BCE452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5509184269334E000BCE452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +60,10 @@
 		E55091A0269334E100BCE452 /* CryptoMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55091A4269334E100BCE452 /* CryptoMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMeUITests.swift; sourceTree = "<group>"; };
 		E55091A6269334E100BCE452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5D1EEBE2693AB3A00B2D816 /* PriceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceEndpoint.swift; sourceTree = "<group>"; };
+		E5D1EEC626941F8700B2D816 /* ReqresSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqresSession.swift; sourceTree = "<group>"; };
+		E5D1EECC2694237B00B2D816 /* BlockchainDataEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockchainDataEndpoint.swift; sourceTree = "<group>"; };
+		E5D1EED12694239E00B2D816 /* TargetType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TargetType+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D1EEB3269341C700B2D816 /* Reqres in Frameworks */,
+				E5D1EEAD26933B2200B2D816 /* RxMoya in Frameworks */,
+				E5D1EEA926933B2200B2D816 /* Moya in Frameworks */,
+				E5D1EEAB26933B2200B2D816 /* ReactiveMoya in Frameworks */,
+				E5D1EEB92693443F00B2D816 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +119,7 @@
 		E5509181269334E000BCE452 /* CryptoMe */ = {
 			isa = PBXGroup;
 			children = (
+				E5D1EEA626933A4900B2D816 /* Networking */,
 				E5DDC3FB269338C000ED73D0 /* Scenes */,
 				E55091B8269335EB00BCE452 /* app */,
 			);
@@ -133,6 +156,35 @@
 			path = app;
 			sourceTree = "<group>";
 		};
+		E5D1EEA626933A4900B2D816 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E5D1EECB2694228D00B2D816 /* Model */,
+				E5D1EEBD2693A8DD00B2D816 /* Endpoints */,
+				E5D1EEC626941F8700B2D816 /* ReqresSession.swift */,
+				E5D1EED12694239E00B2D816 /* TargetType+.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E5D1EEBD2693A8DD00B2D816 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				E5D1EEBE2693AB3A00B2D816 /* PriceEndpoint.swift */,
+				E5D1EECC2694237B00B2D816 /* BlockchainDataEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		E5D1EECB2694228D00B2D816 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E52C92A7269449AE0076325A /* CoinListResponse.swift */,
+				E52C92AC26944C6B0076325A /* CoinResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E5DDC3FB269338C000ED73D0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +217,13 @@
 			dependencies = (
 			);
 			name = CryptoMe;
+			packageProductDependencies = (
+				E5D1EEA826933B2200B2D816 /* Moya */,
+				E5D1EEAA26933B2200B2D816 /* ReactiveMoya */,
+				E5D1EEAC26933B2200B2D816 /* RxMoya */,
+				E5D1EEB2269341C700B2D816 /* Reqres */,
+				E5D1EEB82693443F00B2D816 /* SnapKit */,
+			);
 			productName = CryptoMe;
 			productReference = E550917F269334E000BCE452 /* CryptoMe.app */;
 			productType = "com.apple.product-type.application";
@@ -236,6 +295,11 @@
 				Base,
 			);
 			mainGroup = E5509176269334E000BCE452;
+			packageReferences = (
+				E5D1EEA726933B2200B2D816 /* XCRemoteSwiftPackageReference "Moya" */,
+				E5D1EEB1269341C700B2D816 /* XCRemoteSwiftPackageReference "Reqres" */,
+				E5D1EEB72693443F00B2D816 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E5509180269334E000BCE452 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -280,6 +344,12 @@
 			files = (
 				E5509187269334E000BCE452 /* MainController.swift in Sources */,
 				E5509183269334E000BCE452 /* AppDelegate.swift in Sources */,
+				E5D1EECD2694237B00B2D816 /* BlockchainDataEndpoint.swift in Sources */,
+				E5D1EEBF2693AB3A00B2D816 /* PriceEndpoint.swift in Sources */,
+				E5D1EED22694239E00B2D816 /* TargetType+.swift in Sources */,
+				E52C92A8269449AE0076325A /* CoinListResponse.swift in Sources */,
+				E52C92AD26944C6B0076325A /* CoinResponse.swift in Sources */,
+				E5D1EEC726941F8700B2D816 /* ReqresSession.swift in Sources */,
 				E5509185269334E000BCE452 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,6 +677,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E5D1EEA726933B2200B2D816 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
+			};
+		};
+		E5D1EEB1269341C700B2D816 /* XCRemoteSwiftPackageReference "Reqres" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AckeeCZ/Reqres";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+		E5D1EEB72693443F00B2D816 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E5D1EEA826933B2200B2D816 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D1EEA726933B2200B2D816 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		E5D1EEAA26933B2200B2D816 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D1EEA726933B2200B2D816 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		E5D1EEAC26933B2200B2D816 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D1EEA726933B2200B2D816 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		E5D1EEB2269341C700B2D816 /* Reqres */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D1EEB1269341C700B2D816 /* XCRemoteSwiftPackageReference "Reqres" */;
+			productName = Reqres;
+		};
+		E5D1EEB82693443F00B2D816 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D1EEB72693443F00B2D816 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5509177269334E000BCE452 /* Project object */;
 }
