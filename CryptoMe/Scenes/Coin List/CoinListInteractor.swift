@@ -14,25 +14,70 @@ enum Result<T> {
 
 protocol CoinListBusinessLogic {
     func fetchItems(request: CoinList.ShowItems.Request)
+    func search(request: CoinList.ShowItems.Request)
+    func selected(request: CoinList.SelectItems.Request)
 }
 
 class CoinListInteractor: CoinListBusinessLogic {
     let presenter: CoinListPresentationLogic
     let provider: ProvidesCoinListItems
+    
+    var listResponse: [String: GeneralCoinResponse]  = [:]
+    var selectedItems: [String: GeneralCoinResponse] = [:]
+    var searchedItems: [GeneralCoinResponse] = []
+    
     init(presenter: CoinListPresentationLogic, provider: ProvidesCoinListItems = CoinListProvider()) {
         self.presenter = presenter
         self.provider = provider
     }
+    
     func fetchItems(request: CoinList.ShowItems.Request) {
         provider.getItems { items in
-            let result: Result<GeneralCoinListResponse>
+            let result: Result<[GeneralCoinResponse]>
             if let items = items {
-                result = .success(items)
-
+                self.listResponse = items.data
+                let data = self.listResponse.compactMap({$0.value})
+                result = .success(data)
             } else {
-                result =  .failure(CoinList.ShowItems.Response.Error.fetchError)
+                result = .failure(CoinList.ShowItems.Response.Error.fetchError)
             }
             self.presenter.presentItems(response: .init(result: result))
+        }
+    }
+    
+    func search(request: CoinList.ShowItems.Request) {
+        let result: Result<[GeneralCoinResponse]>
+        let model = listResponse.compactMap({$0.value})
+        if let text = request.text, text.count > 0 {
+            let filteredModel = model.filter({$0.fullName.contains(text)})
+            searchedItems = filteredModel
+            result = filteredModel.isEmpty ? .failure(CoinList.ShowItems.Response.Error.emptySearch) : .success(filteredModel)
+        } else {
+            searchedItems.removeAll()
+            result = .success(model)
+        }
+        
+        self.presenter.presentItems(response: .init(result: result))
+    }
+    
+    func selected(request: CoinList.SelectItems.Request) {
+        if let isSelected = listResponse[request.key]?.isSelected {
+            selectedItems[request.key] = isSelected ? listResponse[request.key] : nil
+            listResponse[request.key]?.isSelected = !isSelected
+            
+        } else {
+            selectedItems[request.key] = listResponse[request.key]
+            listResponse[request.key]?.isSelected = true
+        }
+        if searchedItems.isEmpty {
+        self.presenter.presentItems(response: .init(result: .success(listResponse.compactMap({$0.value}))))
+        } else {
+            for (index, element) in searchedItems.enumerated() {
+                if  element.name == request.key {
+                    searchedItems[index].isSelected = !(element.isSelected ?? false)
+                }
+            }
+            self.presenter.presentItems(response: .init(result: .success(searchedItems)))
         }
     }
 }

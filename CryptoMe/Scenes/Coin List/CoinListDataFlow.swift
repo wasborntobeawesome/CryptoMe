@@ -11,12 +11,14 @@ enum CoinList {
     // MARK: Use cases
     enum ShowItems {
         struct Request {
+            var text: String?
         }
         struct Response {
-            var result: Result<GeneralCoinListResponse>
+            var result: Result<[GeneralCoinResponse]>
 
             enum Error: Swift.Error {
                 case fetchError
+                case emptySearch
             }
         }
 
@@ -24,10 +26,19 @@ enum CoinList {
             var state: ControllerState
         }
     }
+    
+    enum SelectItems {
+        struct Request {
+            let key: String
+        }
+        struct Response {
+        }
+    }
 
     enum ControllerState {
         case loading
         case result([CoinListViewModel])
+        case search([CoinListViewModel])
         case emptyResult(title: String, subtitle: String)
         case error(message: String)
     }

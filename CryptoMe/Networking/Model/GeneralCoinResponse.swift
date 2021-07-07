@@ -36,6 +36,7 @@ struct GeneralCoinResponse: Codable {
     let imageUrl: String?
     let smartContractAddress: String?
     let builtOn: String?
+    var isSelected: Bool?
 }
 
 extension GeneralCoinResponse {
@@ -69,5 +70,6 @@ extension GeneralCoinResponse {
         case imageUrl = "ImageUrl"
         case smartContractAddress = "SmartContractAddress"
         case builtOn = "BuiltOn"
+        case isSelected
     }
 }

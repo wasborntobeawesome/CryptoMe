@@ -10,21 +10,8 @@ import UIKit
 protocol CoinListDisplayLogic: class {
     func displayItems(viewModel: CoinList.ShowItems.ViewModel)
 }
-class CoinSearch: UISearchController {
-    
-}
 
 class CoinListController: UIViewController {
-    var flag = true {
-        didSet {
-            bindingView.tableVew.reloadData()
-        }
-    }
-    var searchedViewModels: [CoinListViewModel]? {
-        didSet {
-            bindingView.tableVew.reloadData()
-        }
-    }
     var representableViewModels: [CoinListViewModel]? {
         didSet {
             bindingView.tableVew.reloadData()
@@ -42,13 +29,12 @@ class CoinListController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let searchBar = UISearchBar()
     lazy var searchController: UISearchController =  {
         let search = UISearchController()
         search.searchResultsUpdater = self
         search.obscuresBackgroundDuringPresentation = false
         return search
-    }() //CoinSearch()
+    }()
     
     let bindingView = CoinListView()
     override func loadView() {
@@ -72,39 +58,42 @@ class CoinListController: UIViewController {
     }
 }
 
-extension CoinListController: UITableViewDelegate {}
+extension CoinListController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let key = representableViewModels?[indexPath.row].subTitle {
+            interactor.selected(request: .init(key: key))
+        }
+    }
+}
 extension CoinListController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if flag {
-            return representableViewModels?.count ?? 0
-        } else {
-            return searchedViewModels?.count ?? 0
-        }
+        return representableViewModels?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")!
-        cell.textLabel?.text = indexPath.row.description
-        if flag {
-            cell.textLabel?.text = representableViewModels?[indexPath.row].title
-        } else {
-            cell.textLabel?.text = searchedViewModels?[indexPath.row].title
-            cell.detailTextLabel?.text = searchedViewModels?[indexPath.row].subTitle
+        cell.textLabel?.text = nil
+        cell.accessoryView = nil
+        cell.selectionStyle  = .none
+        cell.textLabel?.text = representableViewModels?[indexPath.row].title
+        if let isSelected = representableViewModels?[indexPath.row].isSelected {
+            cell.accessoryView = isSelected ? UIImageView(image: UIImage(systemName: "plus")) : nil
         }
         return cell
     }
-    
-    
 }
 
 extension CoinListController: CoinListDisplayLogic {
     func displayItems(viewModel: CoinList.ShowItems.ViewModel) {
         switch viewModel.state {
         case let .result(model):
+            bindingView.tableVew.backgroundColor = .white
             self.representableViewModels = model
         case .loading:
+            bindingView.tableVew.backgroundColor = .red
             self.interactor.fetchItems(request: .init())
         default:
+            bindingView.tableVew.backgroundColor = .yellow
             print("VIEWMODEL")
         }
     }
@@ -112,11 +101,8 @@ extension CoinListController: CoinListDisplayLogic {
 
 extension CoinListController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else { return }
         searchController.showsSearchResultsController = true
-        searchedViewModels = representableViewModels?.filter({$0.title.contains(text)})
-        if let count = searchedViewModels?.count {
-            flag = count > 0 ? false : true
-        }
+        let text = searchController.searchBar.text
+        interactor.search(request: .init(text: text))
     }
 }

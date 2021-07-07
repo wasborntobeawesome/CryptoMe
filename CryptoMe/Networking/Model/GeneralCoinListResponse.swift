@@ -13,7 +13,7 @@ struct GeneralCoinListResponse: Codable {
     let type: Int?
     let hasWarning: Bool?
     let message: String
-    let data: [String: GeneralCoinResponse?]
+    var data: [String: GeneralCoinResponse]
 }
 
 extension GeneralCoinListResponse {
