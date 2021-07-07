@@ -62,7 +62,8 @@ class CoinListInteractor: CoinListBusinessLogic {
     
     func selected(request: CoinList.SelectItems.Request) {
         if let isSelected = listResponse[request.key]?.isSelected {
-            selectedItems[request.key] = isSelected ? listResponse[request.key] : nil
+            selectedItems[request.key] = isSelected ? nil: listResponse[request.key] 
+            print(selectedItems)
             listResponse[request.key]?.isSelected = !isSelected
             
         } else {
@@ -70,6 +71,7 @@ class CoinListInteractor: CoinListBusinessLogic {
             listResponse[request.key]?.isSelected = true
         }
         if searchedItems.isEmpty {
+            self.presenter.selectItems(reponse: .init(values: listResponse.compactMap({$0.value}), selectedValues: selectedItems.compactMap({$0.value})))
         self.presenter.presentItems(response: .init(result: .success(listResponse.compactMap({$0.value}))))
         } else {
             for (index, element) in searchedItems.enumerated() {
@@ -77,6 +79,7 @@ class CoinListInteractor: CoinListBusinessLogic {
                     searchedItems[index].isSelected = !(element.isSelected ?? false)
                 }
             }
+            self.presenter.selectItems(reponse: .init(values: searchedItems, selectedValues: selectedItems.compactMap({$0.value})))
             self.presenter.presentItems(response: .init(result: .success(searchedItems)))
         }
     }

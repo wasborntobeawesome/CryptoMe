@@ -32,7 +32,14 @@ enum CoinList {
             let key: String
         }
         struct Response {
+            var values: [GeneralCoinResponse]
+            var selectedValues: [GeneralCoinResponse]
         }
+        struct ViewModel {
+            var count: Int
+            var values: [GeneralCoinResponse]
+        }
+        
     }
 
     enum ControllerState {

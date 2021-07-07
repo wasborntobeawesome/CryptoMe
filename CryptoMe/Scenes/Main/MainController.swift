@@ -93,6 +93,7 @@ class MainController: UIViewController {
             make.bottom.equalToSuperview().inset(30)
         }
         animationView.loopMode = .loop
+        animationView.backgroundBehavior = .pauseAndRestore
         animationView.play()
         
         

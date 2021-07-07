@@ -9,9 +9,20 @@ import UIKit
 
 protocol CoinListDisplayLogic: class {
     func displayItems(viewModel: CoinList.ShowItems.ViewModel)
+    func showButton(viewModel: CoinList.SelectItems.ViewModel)
+    func hideButton(viewModel: CoinList.SelectItems.ViewModel)
 }
 
 class CoinListController: UIViewController {
+    lazy var searchController: UISearchController =  {
+        let search = UISearchController()
+        search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = false
+        return search
+    }()
+    
+    let bindingView = CoinListView()
+    
     var representableViewModels: [CoinListViewModel]? {
         didSet {
             bindingView.tableVew.reloadData()
@@ -19,6 +30,8 @@ class CoinListController: UIViewController {
     }
     let interactor: CoinListBusinessLogic
     var state: CoinList.ControllerState
+    
+    
     init(interactor: CoinListBusinessLogic, initialState: CoinList.ControllerState = .loading) {
         self.interactor = interactor
         self.state = initialState
@@ -29,14 +42,6 @@ class CoinListController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var searchController: UISearchController =  {
-        let search = UISearchController()
-        search.searchResultsUpdater = self
-        search.obscuresBackgroundDuringPresentation = false
-        return search
-    }()
-    
-    let bindingView = CoinListView()
     override func loadView() {
         title = "Add coin"
         super.loadView()
@@ -84,6 +89,14 @@ extension CoinListController: UITableViewDataSource {
 }
 
 extension CoinListController: CoinListDisplayLogic {
+    func showButton(viewModel: CoinList.SelectItems.ViewModel) {
+        bindingView.showAddButton(viewModel.count)
+    }
+    
+    func hideButton(viewModel: CoinList.SelectItems.ViewModel) {
+        bindingView.hideButton()
+    }
+    
     func displayItems(viewModel: CoinList.ShowItems.ViewModel) {
         switch viewModel.state {
         case let .result(model):
