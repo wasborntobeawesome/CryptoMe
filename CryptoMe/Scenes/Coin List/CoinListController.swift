@@ -15,6 +15,16 @@ class CoinSearch: UISearchController {
 }
 
 class CoinListController: UIViewController {
+    var flag = true {
+        didSet {
+            bindingView.tableVew.reloadData()
+        }
+    }
+    var searchedViewModels: [CoinListViewModel]? {
+        didSet {
+            bindingView.tableVew.reloadData()
+        }
+    }
     var representableViewModels: [CoinListViewModel]? {
         didSet {
             bindingView.tableVew.reloadData()
@@ -33,7 +43,12 @@ class CoinListController: UIViewController {
     }
     
     let searchBar = UISearchBar()
-    let searchController = CoinSearch()
+    lazy var searchController: UISearchController =  {
+        let search = UISearchController()
+        search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = false
+        return search
+    }() //CoinSearch()
     
     let bindingView = CoinListView()
     override func loadView() {
@@ -60,13 +75,22 @@ class CoinListController: UIViewController {
 extension CoinListController: UITableViewDelegate {}
 extension CoinListController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return representableViewModels?.count ?? 0
+        if flag {
+            return representableViewModels?.count ?? 0
+        } else {
+            return searchedViewModels?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")!
         cell.textLabel?.text = indexPath.row.description
-        cell.textLabel?.text = representableViewModels?[indexPath.row].title
+        if flag {
+            cell.textLabel?.text = representableViewModels?[indexPath.row].title
+        } else {
+            cell.textLabel?.text = searchedViewModels?[indexPath.row].title
+            cell.detailTextLabel?.text = searchedViewModels?[indexPath.row].subTitle
+        }
         return cell
     }
     
@@ -82,6 +106,17 @@ extension CoinListController: CoinListDisplayLogic {
             self.interactor.fetchItems(request: .init())
         default:
             print("VIEWMODEL")
+        }
+    }
+}
+
+extension CoinListController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        searchController.showsSearchResultsController = true
+        searchedViewModels = representableViewModels?.filter({$0.title.contains(text)})
+        if let count = searchedViewModels?.count {
+            flag = count > 0 ? false : true
         }
     }
 }

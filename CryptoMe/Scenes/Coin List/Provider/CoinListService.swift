@@ -22,12 +22,12 @@ class CoinListService: FetchesCoinListItems {
         moya.request(.allCoins) { result in
             switch result {
             case let .success(response):
-                do {
-                    let test = try response.map(GeneralCoinListResponse.self)
-                    print(test)
-                } catch let error {
-                    print(error)
-                }
+//                do {
+//                    let test = try response.map(GeneralCoinListResponse.self)
+//                   / print(test)
+//                } catch let error {
+//                    print(error)
+//                }
                 let model = try? response.map(GeneralCoinListResponse.self)
                 completion(model)
             case .failure:

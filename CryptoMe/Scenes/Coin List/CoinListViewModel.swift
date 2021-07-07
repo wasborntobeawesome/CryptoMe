@@ -8,4 +8,5 @@
 import Foundation
 struct CoinListViewModel {
     let title: String
+    let subTitle: String
 }

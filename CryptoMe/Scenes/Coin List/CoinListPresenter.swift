@@ -21,7 +21,7 @@ class CoinListPresenter: CoinListPresentationLogic {
         case .failure:
             viewModel = CoinList.ShowItems.ViewModel(state: .error(message: "errorMessage"))
         case let .success(result):
-            let model = result.data.map({ CoinListViewModel(title: $0.key)})
+            let model = result.data.map({ CoinListViewModel(title: $0.value?.fullName ?? "", subTitle: $0.key)})
             viewModel = CoinList.ShowItems.ViewModel(state: .result(model))
         }
         controller?.displayItems(viewModel: viewModel)
