@@ -24,6 +24,8 @@
 		E52C92F92695828A0076325A /* CoinListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92F82695828A0076325A /* CoinListProvider.swift */; };
 		E52C92FE269582FB0076325A /* CoinListDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92FD269582FB0076325A /* CoinListDataStore.swift */; };
 		E52C9303269584BA0076325A /* CoinListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C9302269584BA0076325A /* CoinListService.swift */; };
+		E52C93152695A3C30076325A /* GeneralCoinListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C93142695A3C30076325A /* GeneralCoinListResponse.swift */; };
+		E52C931A2695A4920076325A /* CoinListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C93192695A4920076325A /* CoinListViewModel.swift */; };
 		E5509183269334E000BCE452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509182269334E000BCE452 /* AppDelegate.swift */; };
 		E5509185269334E000BCE452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509184269334E000BCE452 /* SceneDelegate.swift */; };
 		E5509187269334E000BCE452 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509186269334E000BCE452 /* MainController.swift */; };
@@ -76,6 +78,8 @@
 		E52C92F82695828A0076325A /* CoinListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListProvider.swift; sourceTree = "<group>"; };
 		E52C92FD269582FB0076325A /* CoinListDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListDataStore.swift; sourceTree = "<group>"; };
 		E52C9302269584BA0076325A /* CoinListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListService.swift; sourceTree = "<group>"; };
+		E52C93142695A3C30076325A /* GeneralCoinListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCoinListResponse.swift; sourceTree = "<group>"; };
+		E52C93192695A4920076325A /* CoinListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewModel.swift; sourceTree = "<group>"; };
 		E550917F269334E000BCE452 /* CryptoMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5509182269334E000BCE452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5509184269334E000BCE452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				E52C92E826957F290076325A /* CoinListDataFlow.swift */,
 				E52C92ED269580710076325A /* CoinListPresenter.swift */,
 				E52C92F2269581110076325A /* CoinListBuilder.swift */,
+				E52C93192695A4920076325A /* CoinListViewModel.swift */,
 			);
 			path = "Coin List";
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				E52C92A7269449AE0076325A /* CoinListResponse.swift */,
 				E52C92AC26944C6B0076325A /* CoinResponse.swift */,
 				E52C92DE2694A7F40076325A /* GeneralCoinResponse.swift */,
+				E52C93142695A3C30076325A /* GeneralCoinListResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -436,9 +442,11 @@
 				E5D1EED22694239E00B2D816 /* TargetType+.swift in Sources */,
 				E52C92E926957F290076325A /* CoinListDataFlow.swift in Sources */,
 				E52C92BF269461B80076325A /* CoinListView.swift in Sources */,
+				E52C93152695A3C30076325A /* GeneralCoinListResponse.swift in Sources */,
 				E52C92A8269449AE0076325A /* CoinListResponse.swift in Sources */,
 				E52C92FE269582FB0076325A /* CoinListDataStore.swift in Sources */,
 				E52C92AD26944C6B0076325A /* CoinResponse.swift in Sources */,
+				E52C931A2695A4920076325A /* CoinListViewModel.swift in Sources */,
 				E5D1EEC726941F8700B2D816 /* ReqresSession.swift in Sources */,
 				E52C92C4269461D60076325A /* CoinCell.swift in Sources */,
 				E5509185269334E000BCE452 /* SceneDelegate.swift in Sources */,

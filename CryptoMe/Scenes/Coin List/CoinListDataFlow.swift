@@ -12,7 +12,6 @@ enum CoinList {
     enum ShowItems {
         struct Request {
         }
-
         struct Response {
             var result: Result<GeneralCoinListResponse>
 
@@ -28,7 +27,7 @@ enum CoinList {
 
     enum ControllerState {
         case loading
-        case result(GeneralCoinListResponse)
+        case result([CoinListViewModel])
         case emptyResult(title: String, subtitle: String)
         case error(message: String)
     }

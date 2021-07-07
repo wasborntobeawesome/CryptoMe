@@ -7,43 +7,67 @@
 
 import Foundation
 struct GeneralCoinResponse: Codable {
-    let SortOrder: String
-    let Algorithm: String
-    let Sponsored: Bool
-    let IsUsedInNft: Int?
-    let BlockTime: Double?
-    let Url: String
-    let PlatformType: String?
-    let CoinName: String
-    let BlockNumber: Int?
-    let AssetTokenStatus: String
-    let NetHashesPerSecond: Double?
-    let Name: String
-    let FullName: String
-    let Symbol: String
-    let ProofType: String
-    let MktCapPenalty: Double?
-    let TotalCoinsMined: Double?
-    let Id: String
-    let Description: String
-    let BlockReward: Double?
-    let AssetLaunchDate: String?
-    let DecimalPoints: Decimal?
-    let ContentCreatedOn: Double
-    let MaxSupply: Double?
-    let IsTrading: Bool
-    let IsUsedInDefi: Int?
-    let ImageUrl: String?
-    let SmartContractAddress: String?
-    let BuiltOn: String?
+    let sortOrder: String
+    let algorithm: String
+    let sponsored: Bool
+    let isUsedInNft: Int?
+    let blockTime: Double?
+    let url: String
+    let platformType: String?
+    let coinName: String
+    let blockNumber: Int?
+    let assetTokenStatus: String
+    let netHashesPerSecond: Double?
+    let name: String
+    let fullName: String
+    let symbol: String
+    let proofType: String
+    let mktCapPenalty: Double?
+    let totalCoinsMined: Double?
+    let id: String
+    let description: String
+    let blockReward: Double?
+    let assetLaunchDate: String?
+    let decimalPoints: Decimal?
+    let contentCreatedOn: Double
+    let maxSupply: Double?
+    let isTrading: Bool?
+    let isUsedInDefi: Int?
+    let imageUrl: String?
+    let smartContractAddress: String?
+    let builtOn: String?
 }
 
-struct GeneralCoinListResponse: Codable {
-    let Response: String
-    let BaseImageUrl: String
-    let BaseLinkUrl: String
-//    let Type: Int
-    let HasWarning: Bool
-    let Message: String
-    let Data: [String: GeneralCoinResponse?]
+extension GeneralCoinResponse {
+    enum CodingKeys: String, CodingKey {
+        case sortOrder = "SortOrder"
+        case algorithm = "Algorithm"
+        case sponsored = "Sponsored"
+        case isUsedInNft = "IsUsedInNft"
+        case blockTime = "BlockTime"
+        case url = "Url"
+        case platformType = "PlatformType"
+        case coinName = "CoinName"
+        case blockNumber = "BlockNumber"
+        case assetTokenStatus = "AssetTokenStatus"
+        case netHashesPerSecond = "NetHashesPerSecond"
+        case name = "Name"
+        case fullName = "FullName"
+        case symbol = "Symbol"
+        case proofType = "ProofType"
+        case mktCapPenalty = "MktCapPenalty"
+        case totalCoinsMined = "TotalCoinsMined"
+        case id = "Id"
+        case description = "Description"
+        case blockReward = "BlockReward"
+        case assetLaunchDate = "AssetLaunchDate"
+        case decimalPoints = "DecimalPoints"
+        case contentCreatedOn = "ContentCreatedOn"
+        case maxSupply = "MaxSupply"
+        case isTrading = "isTrading"
+        case isUsedInDefi = "IsUsedInDefi"
+        case imageUrl = "ImageUrl"
+        case smartContractAddress = "SmartContractAddress"
+        case builtOn = "BuiltOn"
+    }
 }
