@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		E52C92A8269449AE0076325A /* CoinListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92A7269449AE0076325A /* CoinListResponse.swift */; };
 		E52C92AD26944C6B0076325A /* CoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92AC26944C6B0076325A /* CoinResponse.swift */; };
+		E52C92B326944DFD0076325A /* CoinListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92B226944DFD0076325A /* CoinListController.swift */; };
+		E52C92BF269461B80076325A /* CoinListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92BE269461B80076325A /* CoinListView.swift */; };
+		E52C92C4269461D60076325A /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92C3269461D60076325A /* CoinCell.swift */; };
+		E52C92CA269497020076325A /* bell.json in Resources */ = {isa = PBXBuildFile; fileRef = E52C92C9269497020076325A /* bell.json */; };
+		E52C92D02694976B0076325A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E52C92CF2694976B0076325A /* Lottie */; };
+		E52C92D526949A370076325A /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = E52C92D426949A370076325A /* error.json */; };
+		E52C92DA2694A6060076325A /* GeneralEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92D92694A6060076325A /* GeneralEndpoint.swift */; };
+		E52C92DF2694A7F40076325A /* GeneralCoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92DE2694A7F40076325A /* GeneralCoinResponse.swift */; };
+		E52C92E426957EE70076325A /* CoinListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92E326957EE70076325A /* CoinListInteractor.swift */; };
+		E52C92E926957F290076325A /* CoinListDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92E826957F290076325A /* CoinListDataFlow.swift */; };
+		E52C92EE269580710076325A /* CoinListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92ED269580710076325A /* CoinListPresenter.swift */; };
+		E52C92F3269581110076325A /* CoinListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92F2269581110076325A /* CoinListBuilder.swift */; };
+		E52C92F92695828A0076325A /* CoinListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92F82695828A0076325A /* CoinListProvider.swift */; };
+		E52C92FE269582FB0076325A /* CoinListDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C92FD269582FB0076325A /* CoinListDataStore.swift */; };
+		E52C9303269584BA0076325A /* CoinListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C9302269584BA0076325A /* CoinListService.swift */; };
 		E5509183269334E000BCE452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509182269334E000BCE452 /* AppDelegate.swift */; };
 		E5509185269334E000BCE452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509184269334E000BCE452 /* SceneDelegate.swift */; };
 		E5509187269334E000BCE452 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5509186269334E000BCE452 /* MainController.swift */; };
@@ -47,6 +62,20 @@
 /* Begin PBXFileReference section */
 		E52C92A7269449AE0076325A /* CoinListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListResponse.swift; sourceTree = "<group>"; };
 		E52C92AC26944C6B0076325A /* CoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResponse.swift; sourceTree = "<group>"; };
+		E52C92B226944DFD0076325A /* CoinListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListController.swift; sourceTree = "<group>"; };
+		E52C92BE269461B80076325A /* CoinListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListView.swift; sourceTree = "<group>"; };
+		E52C92C3269461D60076325A /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
+		E52C92C9269497020076325A /* bell.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bell.json; sourceTree = "<group>"; };
+		E52C92D426949A370076325A /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
+		E52C92D92694A6060076325A /* GeneralEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralEndpoint.swift; sourceTree = "<group>"; };
+		E52C92DE2694A7F40076325A /* GeneralCoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCoinResponse.swift; sourceTree = "<group>"; };
+		E52C92E326957EE70076325A /* CoinListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListInteractor.swift; sourceTree = "<group>"; };
+		E52C92E826957F290076325A /* CoinListDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListDataFlow.swift; sourceTree = "<group>"; };
+		E52C92ED269580710076325A /* CoinListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListPresenter.swift; sourceTree = "<group>"; };
+		E52C92F2269581110076325A /* CoinListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListBuilder.swift; sourceTree = "<group>"; };
+		E52C92F82695828A0076325A /* CoinListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListProvider.swift; sourceTree = "<group>"; };
+		E52C92FD269582FB0076325A /* CoinListDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListDataStore.swift; sourceTree = "<group>"; };
+		E52C9302269584BA0076325A /* CoinListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListService.swift; sourceTree = "<group>"; };
 		E550917F269334E000BCE452 /* CryptoMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5509182269334E000BCE452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5509184269334E000BCE452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +105,7 @@
 				E5D1EEA926933B2200B2D816 /* Moya in Frameworks */,
 				E5D1EEAB26933B2200B2D816 /* ReactiveMoya in Frameworks */,
 				E5D1EEB92693443F00B2D816 /* SnapKit in Frameworks */,
+				E52C92D02694976B0076325A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +126,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E52C92B126944DE70076325A /* Coin List */ = {
+			isa = PBXGroup;
+			children = (
+				E52C92F7269582660076325A /* Provider */,
+				E52C92BA26945EF10076325A /* View */,
+				E52C92B226944DFD0076325A /* CoinListController.swift */,
+				E52C92E326957EE70076325A /* CoinListInteractor.swift */,
+				E52C92E826957F290076325A /* CoinListDataFlow.swift */,
+				E52C92ED269580710076325A /* CoinListPresenter.swift */,
+				E52C92F2269581110076325A /* CoinListBuilder.swift */,
+			);
+			path = "Coin List";
+			sourceTree = "<group>";
+		};
+		E52C92BA26945EF10076325A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E52C92BE269461B80076325A /* CoinListView.swift */,
+				E52C92C3269461D60076325A /* CoinCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E52C92C8269496B00076325A /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				E52C92D426949A370076325A /* error.json */,
+				E52C92C9269497020076325A /* bell.json */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		E52C92F7269582660076325A /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				E52C92F82695828A0076325A /* CoinListProvider.swift */,
+				E52C92FD269582FB0076325A /* CoinListDataStore.swift */,
+				E52C9302269584BA0076325A /* CoinListService.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
 		E5509176269334E000BCE452 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +191,7 @@
 		E5509181269334E000BCE452 /* CryptoMe */ = {
 			isa = PBXGroup;
 			children = (
+				E52C92C8269496B00076325A /* Animation */,
 				E5D1EEA626933A4900B2D816 /* Networking */,
 				E5DDC3FB269338C000ED73D0 /* Scenes */,
 				E55091B8269335EB00BCE452 /* app */,
@@ -172,6 +245,7 @@
 			children = (
 				E5D1EEBE2693AB3A00B2D816 /* PriceEndpoint.swift */,
 				E5D1EECC2694237B00B2D816 /* BlockchainDataEndpoint.swift */,
+				E52C92D92694A6060076325A /* GeneralEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -181,6 +255,7 @@
 			children = (
 				E52C92A7269449AE0076325A /* CoinListResponse.swift */,
 				E52C92AC26944C6B0076325A /* CoinResponse.swift */,
+				E52C92DE2694A7F40076325A /* GeneralCoinResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +263,7 @@
 		E5DDC3FB269338C000ED73D0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E52C92B126944DE70076325A /* Coin List */,
 				E5DDC3FC269338C800ED73D0 /* Main */,
 			);
 			path = Scenes;
@@ -223,6 +299,7 @@
 				E5D1EEAC26933B2200B2D816 /* RxMoya */,
 				E5D1EEB2269341C700B2D816 /* Reqres */,
 				E5D1EEB82693443F00B2D816 /* SnapKit */,
+				E52C92CF2694976B0076325A /* Lottie */,
 			);
 			productName = CryptoMe;
 			productReference = E550917F269334E000BCE452 /* CryptoMe.app */;
@@ -299,6 +376,7 @@
 				E5D1EEA726933B2200B2D816 /* XCRemoteSwiftPackageReference "Moya" */,
 				E5D1EEB1269341C700B2D816 /* XCRemoteSwiftPackageReference "Reqres" */,
 				E5D1EEB72693443F00B2D816 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E52C92CE2694976B0076325A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = E5509180269334E000BCE452 /* Products */;
 			projectDirPath = "";
@@ -316,6 +394,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52C92D526949A370076325A /* error.json in Resources */,
+				E52C92CA269497020076325A /* bell.json in Resources */,
 				E550918F269334E100BCE452 /* LaunchScreen.storyboard in Resources */,
 				E550918C269334E100BCE452 /* Assets.xcassets in Resources */,
 			);
@@ -342,15 +422,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52C92F3269581110076325A /* CoinListBuilder.swift in Sources */,
+				E52C92E426957EE70076325A /* CoinListInteractor.swift in Sources */,
+				E52C92DF2694A7F40076325A /* GeneralCoinResponse.swift in Sources */,
+				E52C92EE269580710076325A /* CoinListPresenter.swift in Sources */,
+				E52C9303269584BA0076325A /* CoinListService.swift in Sources */,
 				E5509187269334E000BCE452 /* MainController.swift in Sources */,
 				E5509183269334E000BCE452 /* AppDelegate.swift in Sources */,
+				E52C92F92695828A0076325A /* CoinListProvider.swift in Sources */,
 				E5D1EECD2694237B00B2D816 /* BlockchainDataEndpoint.swift in Sources */,
 				E5D1EEBF2693AB3A00B2D816 /* PriceEndpoint.swift in Sources */,
+				E52C92B326944DFD0076325A /* CoinListController.swift in Sources */,
 				E5D1EED22694239E00B2D816 /* TargetType+.swift in Sources */,
+				E52C92E926957F290076325A /* CoinListDataFlow.swift in Sources */,
+				E52C92BF269461B80076325A /* CoinListView.swift in Sources */,
 				E52C92A8269449AE0076325A /* CoinListResponse.swift in Sources */,
+				E52C92FE269582FB0076325A /* CoinListDataStore.swift in Sources */,
 				E52C92AD26944C6B0076325A /* CoinResponse.swift in Sources */,
 				E5D1EEC726941F8700B2D816 /* ReqresSession.swift in Sources */,
+				E52C92C4269461D60076325A /* CoinCell.swift in Sources */,
 				E5509185269334E000BCE452 /* SceneDelegate.swift in Sources */,
+				E52C92DA2694A6060076325A /* GeneralEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +771,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E52C92CE2694976B0076325A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.3;
+			};
+		};
 		E5D1EEA726933B2200B2D816 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -706,6 +806,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E52C92CF2694976B0076325A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E52C92CE2694976B0076325A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		E5D1EEA826933B2200B2D816 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E5D1EEA726933B2200B2D816 /* XCRemoteSwiftPackageReference "Moya" */;

@@ -22,8 +22,8 @@ extension TargetType {
     }
     
     var headers: [String : String]? {
-        ["Content-Type": "application/json",
-         "authorization": "Apikey 6f11e831ada33b24a15e663a0b55c370fb1fe0850cf18cf73a0e6a8390d8de46"]
+        ["Content-Type": "application/json" ] //,
+         //"authorization": "Apikey 6f11e831ada33b24a15e663a0b55c370fb1fe0850cf18cf73a0e6a8390d8de46"]
     }
     
     func snakeCaseCodable(data: Codable) -> Task {

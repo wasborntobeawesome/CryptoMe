@@ -10,7 +10,7 @@ import Reqres
 
 class ReqresSession: Session {
     static let shared: ReqresSession = {
-        let configuration = ReqresSession(configuration: Reqres.defaultSessionConfiguration())
+        let configuration = ReqresSession()//ReqresSession(configuration: Reqres.defaultSessionConfiguration())
         return configuration
     }()
 }
