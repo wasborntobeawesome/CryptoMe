@@ -16,6 +16,7 @@ protocol CoinListBusinessLogic {
     func fetchItems(request: CoinList.ShowItems.Request)
     func search(request: CoinList.ShowItems.Request)
     func selected(request: CoinList.SelectItems.Request)
+    var selectedItems: [String: GeneralCoinResponse] { get }
 }
 
 class CoinListInteractor: CoinListBusinessLogic {

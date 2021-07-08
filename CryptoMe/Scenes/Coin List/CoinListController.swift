@@ -25,7 +25,7 @@ class CoinListController: UIViewController {
     
     var representableViewModels: [CoinListViewModel]? {
         didSet {
-            bindingView.tableVew.reloadData()
+            bindingView.tableView.reloadData()
         }
     }
     let interactor: CoinListBusinessLogic
@@ -52,14 +52,16 @@ class CoinListController: UIViewController {
     
     func setup() {
         self.navigationItem.searchController = searchController
-        bindingView.tableVew.delegate = self
-        bindingView.tableVew.dataSource = self
-        bindingView.tableVew.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        bindingView.tableView.delegate = self
+        bindingView.tableView.dataSource = self
+        bindingView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         navigationController?.navigationBar.prefersLargeTitles = true
+        bindingView.addButton.addTarget(self, action: #selector(handleAdd), for: .touchUpInside)
     }
     
-    @objc func handleCancel(_ sender: UIButton) {
-        
+    @objc func handleAdd(_ sender: UIButton) {
+        MainDataStore.shared.models = interactor.selectedItems.map({$0.value})
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -100,14 +102,11 @@ extension CoinListController: CoinListDisplayLogic {
     func displayItems(viewModel: CoinList.ShowItems.ViewModel) {
         switch viewModel.state {
         case let .result(model):
-            bindingView.tableVew.backgroundColor = .white
             self.representableViewModels = model
         case .loading:
-            bindingView.tableVew.backgroundColor = .red
             self.interactor.fetchItems(request: .init())
         default:
-            bindingView.tableVew.backgroundColor = .yellow
-            print("VIEWMODEL")
+            print("default")
         }
     }
 }

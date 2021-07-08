@@ -1,24 +1,30 @@
 //
-//  CoinListView.swift
+//  MainView.swift
 //  CryptoMe
 //
-//  Created by Alimov Islom on 06/07/21.
+//  Created by Alimov Islom on 08/07/21.
 //
 
 import UIKit
 
-class CoinListView: UIView {    
+class MainView: UIView {
+    let warningView = WarningView()
+    let refreshControl = UIRefreshControl()
     let addButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemBlue
+        button.setTitle("Add Coins", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 8
         return button
     }()
-    let tableView: UITableView = {
+    
+    lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.addSubview(refreshControl)
         return tableView
     }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -31,16 +37,17 @@ class CoinListView: UIView {
     
     func setup() {
         addSubview(tableView)
+        backgroundColor = .white
+        
     }
-    
     func setupConstraints() {
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        showAddButton()
     }
     
-    func showAddButton(_ count: Int) {
-        addButton.setTitle("Add \(count) New Coins", for: .normal)
+    func showAddButton() {
         addButton.removeFromSuperview()
         addSubview(addButton)
         addButton.snp.makeConstraints { make in
@@ -50,7 +57,18 @@ class CoinListView: UIView {
         }
     }
     
-    func hideButton() {
-        addButton.removeFromSuperview()
+    func showTableView() {
+        warningView.removeFromSuperview()
+        tableView.isHidden = false
+        showAddButton()
+    }
+    
+    func showEmptyState() {
+        addSubview(warningView)
+        tableView.isHidden = true
+        warningView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        showAddButton()
     }
 }
