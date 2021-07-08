@@ -9,9 +9,12 @@ import Foundation
 
 protocol ProvidesMainItems {
     func getItems(completion: @escaping ([String: PriceResponse]?) -> Void)
+    func deleteItem(id: String, completion: @escaping ([String: PriceResponse]?) -> Void)
 }
 
 struct MainProvider: ProvidesMainItems {
+
+    
     let dataStore: StoresMainModels
     let service: FetchesMainItems
     
@@ -33,5 +36,10 @@ struct MainProvider: ProvidesMainItems {
         } else {
             completion(nil)
         }
+    }
+    
+    func deleteItem(id: String, completion: @escaping ([String : PriceResponse]?) -> Void) {
+        _ = dataStore.deleteItem(id: id)
+        getItems(completion: completion)
     }
 }

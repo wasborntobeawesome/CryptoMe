@@ -66,7 +66,13 @@ class MainController: UIViewController {
     }
     
 }
-extension MainController: UITableViewDelegate {}
+extension MainController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+             interactor.deleteItem(request: .init(text: representableViewModels?[indexPath.row].name))
+        }
+    }
+}
 
 extension MainController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,7 +85,7 @@ extension MainController: UITableViewDataSource {
         cell.accessoryView = nil
         cell.textLabel?.text = representableViewModels?[indexPath.row].name
         let moneyLabel = UILabel()
-        moneyLabel.text = "1200$"
+        moneyLabel.text = representableViewModels?[indexPath.row].money
         cell.addSubview(moneyLabel)
         moneyLabel.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(16)

@@ -16,11 +16,10 @@ class MainPresenter: MainPresentationLogic {
     
     func presentItems(response: Main.ShowItems.Response) {
         switch response.result {
-        case let .failure(error):
-            print(error)
+        case .failure:
             controller?.displayItems(viewModel: .init(state: .emptyResult(title: "", subtitle: "")))
         case let .success(items):
-            let viewModel = items.map({MainViewModel(name: $0.key, usd: $0.value.usd.description, euro: $0.value.euro.description)})
+            let viewModel = items.map({MainViewModel(name: $0.key, usd: $0.value.usd.description, euro: $0.value.euro.description, money: "\($0.value.usd)💵|\($0.value.euro)💶")})
             controller?.displayItems(viewModel: .init(state: .result(viewModel)))
         }
     }
@@ -30,4 +29,5 @@ struct MainViewModel {
     let name: String
     let usd: String
     let euro: String
+    let money: String
 }
